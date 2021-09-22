@@ -9,9 +9,10 @@ import java.sql.SQLException;
 public class Transaction {
 
     public void transactionWithRollback() throws SQLException {
+
         long flightId = 9;
         String deleteFlightSql = "DELETE FROM flight WHERE id = ?";
-        String deleteTicketSql = "DELETE FROM ticket WHERE id = ?";
+        String deleteTicketSql = "DELETE FROM ticket WHERE flight_id = ?";
 
         Connection connection = null;
         PreparedStatement deleteFlightStatement = null;

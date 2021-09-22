@@ -8,5 +8,8 @@ public class TransactionRunner {
 
         Transaction transaction = new Transaction();
         transaction.transactionWithRollback();
+
+        BatchRequest batchRequest = new BatchRequest();
+        batchRequest.requestBatch();
     }
 }
