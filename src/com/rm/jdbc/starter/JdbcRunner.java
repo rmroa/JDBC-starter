@@ -1,5 +1,9 @@
 package com.rm.jdbc.starter;
 
+import com.rm.jdbc.starter.custom.Flights;
+import com.rm.jdbc.starter.custom.GeneratedKeys;
+import com.rm.jdbc.starter.custom.MetaData;
+
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

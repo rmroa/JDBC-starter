@@ -1,4 +1,4 @@
-package com.rm.jdbc.starter;
+package com.rm.jdbc.starter.custom;
 
 import com.rm.jdbc.starter.util.ConnectionManager;
 
