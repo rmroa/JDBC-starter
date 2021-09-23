@@ -20,7 +20,7 @@ public class Flights {
                 " WHERE departure_date BETWEEN ? AND ?";
 
         List<Long> result = new ArrayList<>();
-        try (Connection connection = ConnectionManager.open();
+        try (Connection connection = ConnectionManager.get();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setFetchSize(50);
             preparedStatement.setQueryTimeout(10);

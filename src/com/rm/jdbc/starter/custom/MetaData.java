@@ -11,7 +11,7 @@ public class MetaData {
 
     public void checkMetaData() throws SQLException {
 
-        try (Connection connection = ConnectionManager.open()) {
+        try (Connection connection = ConnectionManager.get()) {
             DatabaseMetaData metaData = connection.getMetaData();
             ResultSet catalogs = metaData.getCatalogs();
             while (catalogs.next()) {
