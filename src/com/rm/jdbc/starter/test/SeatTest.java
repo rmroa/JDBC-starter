@@ -30,7 +30,7 @@ public class SeatTest {
     private static void checkFindByIdSeat() {
         SeatDao seatDao = SeatDao.getInstance();
         Aircraft aircraft = new Aircraft(1);
-        Seat seat = new Seat(aircraft, "A12");
+        Seat seat = new Seat(aircraft, "A1");
         Optional<Seat> maybeSeat = seatDao.findById(seat);
         System.out.println(maybeSeat);
     }
@@ -38,7 +38,7 @@ public class SeatTest {
     private static void checkSaveSeat() {
         SeatDao seatDao = SeatDao.getInstance();
         Aircraft aircraft = new Aircraft(1);
-        Seat seat = new Seat(aircraft, "A1");
+        Seat seat = new Seat(aircraft, "A10");
         Seat saveSeat = seatDao.save(seat);
         System.out.println(saveSeat);
     }
@@ -46,7 +46,7 @@ public class SeatTest {
     private static void checkUpdateSeat() {
         SeatDao seatDao = SeatDao.getInstance();
         Aircraft aircraft = new Aircraft(1);
-        Seat resultSeat = new Seat(aircraft, "A17");
+        Seat resultSeat = new Seat(aircraft, "A10");
         Optional<Seat> maybeSeat = seatDao.findById(resultSeat);
         System.out.println(maybeSeat);
 

@@ -88,6 +88,7 @@ public class SeatDao implements Dao<Seat, Seat> {
         try (Connection connection = ConnectionManager.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
             ResultSet resultSet = preparedStatement.executeQuery();
+
             List<Seat> seats = new ArrayList<>();
             while (resultSet.next()) {
                 seats.add(buildSeat(resultSet));
@@ -133,7 +134,7 @@ public class SeatDao implements Dao<Seat, Seat> {
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
             preparedStatement.setString(1, seat.getSeatNo());
             preparedStatement.setInt(2, seat.getAircraft().getId());
-            preparedStatement.setObject(3, "A17");
+            preparedStatement.setObject(3, "A10");
 
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
@@ -160,9 +161,9 @@ public class SeatDao implements Dao<Seat, Seat> {
 
     private Seat buildSeat(ResultSet resultSet) throws SQLException {
         Aircraft aircraft = new Aircraft(
-                resultSet.getBlob(1),
                 resultSet.getInt("id"),
-                resultSet.getString("model")
+                resultSet.getString("model"),
+                resultSet.getBlob("image")
         );
         return new Seat(
                 aircraft,
